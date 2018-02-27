@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 """
 	---SUPERMARINE---
-	* Version 0.2b  *
+	* Version 0.3b  *
 	-----------------
 	
-	Create a mixer geometrie blockMesh dictionarie for use in 
-	the OpenFOAM toolkits.
+	Create a mixer geometry blockMesh dictionary for use in 
+	The OpenFOAM toolkits.
 
 	Date:	07-2017
 	Author:	Gabriel Lemieux (gabriel.lemieux@usherbrooke.ca)
 
-	TARGET : CONE 15
+	TARGET : MIXER 
 	
 	-- LOG YOUR TWEAKS HERE ------------------------------
 	Key			Description
 	------------------------------------------------------
-	MOD1		Vertex adjustment where added
+	MOD1		Vertex adjustment was added
 
 	------------------------------------------------------ 
 	--> Search the keu to find the modification 
@@ -30,27 +30,23 @@
 					The first being the center hole/square section.
 
 	NSEC :			The Number of SECtors to create
-					Must be a multiple of 4 (12,24 and 36 are usefull multiple of 4!)
+					Must be a multiple of 4 (12,24 and 36 are useful multiple of 4!)
 
 	HLAY : 			Height of each LAYers 
 					This parameter must be a list of at least one element
 
-	SHAFT : 		Section on wich the SHAFT exist
+	SHAFT : 		Section on which the SHAFT exists
 					This parameter must be a list which as the same number of elements
 					of HLAY
 
 	IMPELLERCUT :	Where to CUT for the IMPELLER
-					This parameter must be a NSEC by NCAR by NHLAY 3d matix.
-					A 1 in a region mean to cut that region for the impeller. 
+					This parameter must be a NSEC by NCAR by NHLAY 3d matrix.
+					A 1 in a region means to cut that region for the impeller. 
 
 	SQRRATIO :		The RATIO for the distance between the center SQuaRe region and the 
-					outer cylinder.
+					Outer cylinder.
 					Must be larger than 0 and smaller than 1.
 
-	*To Do*
-
-	Change the impeller region deffinitions to allow Roshton and more excentric
-	impeller configuration.
 """
 #Utility
 #Convert degree to radian
@@ -78,7 +74,7 @@ def setupAndRun():
 	## CHANGE THE SETTINGS HERE ##
 	## NEW-BRUNSWICK 3L REACTOR ##
 	DIVI        = [   10,  10, 20]
-	RQUAD        = [ 0.05, 0.1, 0.350, 0.615]
+	RQUAD       = [ 0.05, 0.1, 0.350, 0.615]
 	NSEC        = 12
 	HLAY        = [ 0.25, 0.60, 0.80,1.05,2.75]
 	SHAFT       = [  0, 1, 1,  1,  1]
@@ -92,26 +88,13 @@ def setupAndRun():
 	## MOD OPTIONS ##
 
 	## END OF THE EASY STUFF    ##
-	setupCheck() #Check if your settings are OK
-	
+
 	# Generate the data
 	generate()
 
 	#Write out the blockMeshDict
 	printBlockMeshDict()
 
-#-- YOU SHOULDN'T HAVE TO WRITE AFTER THIS LINE --#
-#---------------SETTINGS ANALYSIS-----------------#
-def setupCheck():
-	global RQUAD,NSEC,HLAY,SHAFT,IMPELLERLVL,IMPELLERSEC,SQRRATIO
-	prerr=lambda s:sys.stderr.write("ERROR:\t"+s+"\n")
-	if len(RQUAD)<2:
-		prerr("The number of cadran is less thant 2...")
-		sys.exit(1)
-
-	if np.mod(NSEC,4)!=0:
-		prerr("The number of section is not a multiple of 4.")
-		sys.exit(1)
 
 """
   ____                             __  __            _            
@@ -121,6 +104,7 @@ def setupCheck():
  |____/ \__,_| .__/ \___|_|       |_|  |_|\__,_|_|  |_|_| |_|\___|
              |_|                                                  
 """
+#------ READ THE DOCUMENTATIONS BEFOR CHANGING THE CODE ---------#
 
 
 def generate():
