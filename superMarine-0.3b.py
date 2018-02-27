@@ -25,7 +25,7 @@
 
 	DIVI :			Angular, Radial and Vertical divisions per block
 	
-	RCAD : 			Radius of each CADran 
+	RQUAD : 			Radius of each QUADran 
 					This parameter must be a list of at least two elements,
 					The first being the center hole/square section.
 
@@ -69,7 +69,7 @@ def setupAndRun():
 	# all functions. This is not a good programming
 	# habits, but this make the script "easyer" to 
 	# modify using application like spider.
-	global RCAD,NSEC,HLAY,SHAFT,IMPELLERCUT,SQRRATIO
+	global RQUAD,NSEC,HLAY,SHAFT,IMPELLERCUT,SQRRATIO
 	global IMPELLERSEC,SQRRATIO,LVLROT,DIVI
 	global vertex,hexa,edges,spedge
 	global wallsPatch,shaftPatch,impelPatch
@@ -78,12 +78,12 @@ def setupAndRun():
 	## CHANGE THE SETTINGS HERE ##
 	## NEW-BRUNSWICK 3L REACTOR ##
 	DIVI        = [   10,  10, 20]
-	RCAD        = [ 0.05, 0.1, 0.350, 0.615]
+	RQUAD        = [ 0.05, 0.1, 0.350, 0.615]
 	NSEC        = 12
 	HLAY        = [ 0.25, 0.60, 0.80,1.05,2.75]
 	SHAFT       = [  0, 1, 1,  1,  1]
 	LVLROT      = [  0, 0, 90, 90, 90, 90]
-	IMPELLERCUT = np.zeros((NSEC,len(RCAD),len(HLAY)))
+	IMPELLERCUT = np.zeros((NSEC,len(RQUAD),len(HLAY)))
 	IMPELLERCUT[::(NSEC//3),[0,1],2] = 1
 	IMPELLERCUT[0:NSEC,0,2] = 1
 
@@ -103,9 +103,9 @@ def setupAndRun():
 #-- YOU SHOULDN'T HAVE TO WRITE AFTER THIS LINE --#
 #---------------SETTINGS ANALYSIS-----------------#
 def setupCheck():
-	global RCAD,NSEC,HLAY,SHAFT,IMPELLERLVL,IMPELLERSEC,SQRRATIO
+	global RQUAD,NSEC,HLAY,SHAFT,IMPELLERLVL,IMPELLERSEC,SQRRATIO
 	prerr=lambda s:sys.stderr.write("ERROR:\t"+s+"\n")
-	if len(RCAD)<2:
+	if len(RQUAD)<2:
 		prerr("The number of cadran is less thant 2...")
 		sys.exit(1)
 
@@ -124,13 +124,13 @@ def setupCheck():
 
 
 def generate():
-	global RCAD,NSEC,HLAY,SHAFT,IMPELLERCUT,SQRRATIO
+	global RQUAD,NSEC,HLAY,SHAFT,IMPELLERCUT,SQRRATIO
 	global IMPELLERSEC,SQRRATIO,LVLROT,DIVI
 	global vertex,hexa,edges,spedge
 	global wallsPatch,shaftPatch,impelPatch
 	global topPatch,bottomPatch
 
-	nCad = len(RCAD)
+	nCad = len(RQUAD)
 	
 	#-- CYLINDER VERTEX --#
 	# Create rotation unit vectors
@@ -142,7 +142,7 @@ def generate():
 	# Multiply each units with each radius
 	# this create the vertex rings
 	vertex = np.empty([1,3]) #Create a dummy at 0
-	for radius in RCAD:
+	for radius in RQUAD:
 		vertex = np.append(vertex, radius*cUnits,axis=0)
 	
 	#Remove the dummy
@@ -407,7 +407,6 @@ def printBlockMeshDict():
 	"convertToMeter = 1;"]
 	
 	#Vertex
-	
 	vtemp="({:20.10f}  {:20.10f}  {:20.10f})"
 	blockMesh+=["","vertices","("]
 	for v in vertex:
