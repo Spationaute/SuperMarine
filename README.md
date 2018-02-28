@@ -13,8 +13,8 @@ SuperMarine was first developed to build a marine impeller, but can also be used
 	1. **The number of processor can be changed in the decomposePar dictionary**
 
 ## TO DO
-[ ] Clean the code
-[ ] Finish the manual
-[ ] Add exemples
+- [ ] Clean the code
+- [ ] Finish the manual
+- [ ] Add exemples
 
 ## Documentations
