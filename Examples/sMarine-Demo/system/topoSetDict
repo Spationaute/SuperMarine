@@ -1,0 +1,38 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      topoSetDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+
+    {
+	    name    MRFZone;
+	    type    cellSet;
+	    action  new;
+	    source  cylinderToCell;
+	    sourceInfo
+	    {
+	       p1       (0 0 0.06); // start point on cylinder axis
+	       p2       (0 0 0.08);   // end point on cylinder axis
+	       radius   0.04;
+	    }
+
+    }
+
+);
+
+
+// ************************************************************************* //
