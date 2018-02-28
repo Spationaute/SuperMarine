@@ -23,3 +23,17 @@ Since it is a python script, the user can change the code has he wish and adapt 
 - [ ] Add examples
 
 ## Documentations
+
+## Quick Introduction
+| **DIVI** |  Angular, Radial and Vertical divisions per block |
+| **RQUAD** | Radius of each QUADran.
+              This parameter must be a list of at least two elements,The first being the center hole/square section.|
+| **NSEC** |  The Number of SECtors to create.Must be a multiple of 4 (12,24 and 36 are useful multiple of 4!)|
+| **HLAY** |    Height of each LAYers. This parameter must be a list of at least one element|
+| **SHAFT** | Section on which the SHAFT exists. This parameter must be a list which as the same number of elements
+              of HLAY |
+| **IMPELLERCUT** |   Where to CUT for the IMPELLER. This parameter must be a NSEC by NCAR by NHLAY 3d matrix.
+                A 1 in a region means to cut that region for the impeller.|
+
+| **SQRRATIO ** | The RATIO for the distance between the center SQuaRe region and the Outer cylinder.
+                Must be larger than 0 and smaller than 1.|
