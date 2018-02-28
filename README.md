@@ -25,6 +25,8 @@ Since it is a python script, the user can change the code has he wish and adapt 
 ## Documentations
 
 ## Quick Introduction
+| Variables | Description |
+|-----------|-------------|
 | **DIVI** |  Angular, Radial and Vertical divisions per block |
 | **RQUAD** | Radius of each QUADran.
               This parameter must be a list of at least two elements,The first being the center hole/square section.|
