@@ -278,27 +278,27 @@ for H in range(0, len(HLAY)):
         for sector in range(0, NSEC):
             if SHAFT[H] == 1 and quadrant == 0 and IMPELLERCUT[sector, quadrant, H] == 0:
                 shaftPatch.append((scaffold if sector < NSEC - 1 else scaffoldLast) + sector + (H * NSEC * nCad))
-                CutV = IMPELLERCUT[sector, quadrant, H]
-                if H < len(HLAY) - 1:
-                    if CutV != IMPELLERCUT[sector, quadrant, H + 1]:
-                        if sector < NSEC - 1:
-                            impelPatch.append(impScaffolds[3] + sector + quadrant * NSEC + (H * NSEC * nCad))
-                        else:
-                            adjust = [0, 0, NSEC, NSEC]
-                            impelPatch.append(impScaffolds[3] + sector + quadrant * NSEC + (H * NSEC * nCad) - adjust)
-                if quadrant < nCad - 1:
-                    if CutV != IMPELLERCUT[sector, quadrant + 1, H]:
-                        if sector < NSEC - 1:
-                            impelPatch.append(impScaffolds[4] + sector + quadrant * NSEC + (H * NSEC * nCad))
-                        else:
-                            adjust = [0, NSEC, NSEC, 0]
-                            impelPatch.append(impScaffolds[4] + sector + quadrant * NSEC + (H * NSEC * nCad) - adjust)
-                if sector < NSEC - 1:
-                    if CutV != IMPELLERCUT[sector + 1, quadrant, H]:
-                        impelPatch.append(impScaffolds[1] + sector + quadrant * NSEC + (H * NSEC * nCad))
-                elif sector == NSEC - 1:
-                    if int(CutV) != int(IMPELLERCUT[0, quadrant, H]):
-                        impelPatch.append(impScaffolds[0] + 0 + quadrant * NSEC + (H * NSEC * nCad))
+            CutV = IMPELLERCUT[sector, quadrant, H]
+            if H < len(HLAY) - 1:
+                if CutV != IMPELLERCUT[sector, quadrant, H + 1]:
+                    if sector < NSEC - 1:
+                        impelPatch.append(impScaffolds[3] + sector + quadrant * NSEC + (H * NSEC * nCad))
+                    else:
+                        adjust = [0, 0, NSEC, NSEC]
+                        impelPatch.append(impScaffolds[3] + sector + quadrant * NSEC + (H * NSEC * nCad) - adjust)
+            if quadrant < nCad - 1:
+                if CutV != IMPELLERCUT[sector, quadrant + 1, H]:
+                    if sector < NSEC - 1:
+                        impelPatch.append(impScaffolds[4] + sector + quadrant * NSEC + (H * NSEC * nCad))
+                    else:
+                        adjust = [0, NSEC, NSEC, 0]
+                        impelPatch.append(impScaffolds[4] + sector + quadrant * NSEC + (H * NSEC * nCad) - adjust)
+            if sector < NSEC - 1:
+                if CutV != IMPELLERCUT[sector + 1, quadrant, H]:
+                    impelPatch.append(impScaffolds[1] + sector + quadrant * NSEC + (H * NSEC * nCad))
+            elif sector == NSEC - 1:
+                if int(CutV) != int(IMPELLERCUT[0, quadrant, H]):
+                    impelPatch.append(impScaffolds[0] + 0 + quadrant * NSEC + (H * NSEC * nCad))
 
 # -- TOP AND BOTTOM PATCH -- #
 topPatch = []
