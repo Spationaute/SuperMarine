@@ -22,7 +22,6 @@ Since it is a python script, the user can change the code has he wish and adapt 
 - [ ] Finish the manual
 - [x] Add an example
 - [ ] Add more examples
--- [ ] Add Cones Examples
 
 ## Documentations
 
