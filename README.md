@@ -20,7 +20,9 @@ Since it is a python script, the user can change the code has he wish and adapt 
 ## TO DO
 - [ ] Clean the code
 - [ ] Finish the manual
-- [ ] Add examples
+- [x] Add an example
+- [ ] Add more examples
+-- [ ] Add Cones Examples
 
 ## Documentations
 
@@ -37,3 +39,9 @@ The "`./constant/polyMesh`" directory must exist.
 | **SHAFT** | Section on which the SHAFT exists. This parameter must be a list which as the same number of elements of HLAY. |
 | **IMPELLERCUT** |   Where to CUT for the IMPELLER. This parameter must be a NSEC by NCAR by NHLAY 3d matrix. A 1 in a region means to cut that region for the impeller. |
 | **SQRRATIO** | The RATIO for the distance between the center SQuaRe region and the Outer cylinder. Must be larger than 0 and smaller than 1. |
+
+## Special Tanks
+Denis Groleau
+Pierre Proulx
+Ehsan Askari
+

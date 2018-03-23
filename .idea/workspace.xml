@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="430c90ef-a5c9-4880-9edd-63dad6de5a84" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Examples/sMarine-Demo/constant/transportProperties" beforeDir="false" afterPath="$PROJECT_DIR$/Examples/sMarine-Demo/constant/transportProperties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/SuperMarine$superMarine_0_3b__1_.coverage" NAME="superMarine-0.3b (1) Coverage Results" MODIFIED="1519854471711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Examples/sMarine-Demo" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="superMarine-0.3b.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/superMarine-0.3b.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4096">
+              <caret line="256" column="2" selection-start-line="256" selection-start-column="2" selection-end-line="256" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="superMarine-0.3b.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/superMarine-0.3b.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7088">
+              <caret line="443" selection-start-line="443" selection-end-line="443" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MRFProperties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/constant/MRFProperties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forceReader.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../Programmation/Python/forces/forceReader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#15#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="liveAlpha.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../../Programmation/Python/kLAnalyst/liveAlpha.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-768">
+              <folding>
+                <element signature="e#63#94#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1072">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>scafold</find>
+      <find>impelPa</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Spationaute &lt;gabriel.lemieux@usherbrooke.ca&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Examples/sMarine-Demo/setup.py" />
+        <option value="$PROJECT_DIR$/superMarine-0.3b.py" />
+        <option value="$PROJECT_DIR$/Examples/sMarine-Demo/superMarine-0.3b.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Examples/sMarine-Demo/constant/transportProperties" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2037" />
+    <option name="y" value="14" />
+    <option name="width" value="1867" />
+    <option name="height" value="1066" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SuperMarine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperMarine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SuperMarine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperMarine" type="462c0819:PsiDirectoryNode" />
+              <item name="Documentation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SuperMarine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperMarine" type="462c0819:PsiDirectoryNode" />
+              <item name="Examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SuperMarine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperMarine" type="462c0819:PsiDirectoryNode" />
+              <item name="Examples" type="462c0819:PsiDirectoryNode" />
+              <item name="sMarine-Demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SuperMarine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperMarine" type="462c0819:PsiDirectoryNode" />
+              <item name="Examples" type="462c0819:PsiDirectoryNode" />
+              <item name="sMarine-Demo" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Programmation/Python/kLAnalyst" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.superMarine-0.3b (1)">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="SuperMarine" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="superMarine-0.3b (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SuperMarine" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Examples/sMarine-Demo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Examples/sMarine-Demo/superMarine-0.3b.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="superMarine-0.3b" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SuperMarine" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/superMarine-0.3b.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.superMarine-0.3b" />
+      <item itemvalue="Python.superMarine-0.3b (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.superMarine-0.3b (1)" />
+        <item itemvalue="Python.superMarine-0.3b" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="430c90ef-a5c9-4880-9edd-63dad6de5a84" name="Default" comment="" />
+      <created>1519850126046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1519850126046</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Standardisation and typos">
+      <created>1519853659857</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519853659857</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Standardisation and typos again...">
+      <created>1519854235302</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1519854235302</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adding instructions">
+      <created>1519854904309</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1519854904309</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adding instructions">
+      <created>1519855007489</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1519855007489</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Adding instructions">
+      <created>1519855063762</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1519855063762</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Adding instructions">
+      <created>1519855314348</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1519855314348</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Adding instructions">
+      <created>1519855382320</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1519855382320</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Correcting the &quot;Impeller Patch&quot; bug... The problem was an miss indented part of the code.">
+      <created>1519921183892</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1519921183892</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added doc pdf">
+      <created>1519921245509</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519921245509</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1919" y="0" width="1922" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32799146" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32799146" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32799146" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32478634" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2531915" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.19625668" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="430" height="856" id="Documentation" order="3" side_tool="true" weight="0.32994652" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32799146" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="7" visible="true" weight="0.32905984" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Standardisation and typos" />
+    <MESSAGE value="Standardisation and typos again..." />
+    <MESSAGE value="Adding instructions" />
+    <MESSAGE value="Correcting the &quot;Impeller Patch&quot; bug... The problem was an miss indented part of the code." />
+    <MESSAGE value="Added doc pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added doc pdf" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/superMarine-0.3b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4096">
+          <caret line="256" column="2" selection-start-line="256" selection-start-column="2" selection-end-line="256" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/superMarine-0.3b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7088">
+          <caret line="443" lean-forward="true" selection-start-line="443" selection-end-line="443" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1072">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/constant/MRFProperties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/superMarine-0.3b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="35" selection-start-line="23" selection-end-line="47" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/superMarine-0.3b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3168">
+          <caret line="198" column="23" lean-forward="true" selection-start-line="198" selection-start-column="23" selection-end-line="198" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1072">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="41" lean-forward="true" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1072">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/superMarine-0.3b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7088">
+          <caret line="443" selection-start-line="443" selection-end-line="443" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/superMarine-0.3b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4096">
+          <caret line="256" column="2" selection-start-line="256" selection-start-column="2" selection-end-line="256" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/constant/transportProperties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sMarine-Demo/constant/MRFProperties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Programmation/Python/forces/forceReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#15#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Programmation/Python/kLAnalyst/liveAlpha.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-768">
+          <folding>
+            <element signature="e#63#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
