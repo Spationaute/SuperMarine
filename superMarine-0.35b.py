@@ -309,11 +309,11 @@ for H in [0, len(HLAY)]:
     for quadrant in range(0, nCad - 1):
         for sector in range(0, NSEC):
             if H == 0:
-                bottomPatch.append(
-                    (scaffold if sector < NSEC - 1 else scaffoldLast) + sector + NSEC * quadrant + (H * NSEC * nCad))
+                if IMPELLERCUT[sector,quadrant,H]!=1:
+                    bottomPatch.append((scaffold if sector < NSEC - 1 else scaffoldLast) + sector + NSEC * quadrant + (H * NSEC * nCad))
             else:
-                topPatch.append(
-                    (scaffold if sector < NSEC - 1 else scaffoldLast) + sector + NSEC * quadrant + (H * NSEC * nCad))
+                if IMPELLERCUT[sector,quadrant,H-1]!=1:
+                    topPatch.append((scaffold if sector < NSEC - 1 else scaffoldLast) + sector + NSEC * quadrant + (H * NSEC * nCad))
 
 # -- CENTER TOP BOTTOM and IMPELLER/SHAFT -- #
 scaffold = np.array([[0, 0, 0],
