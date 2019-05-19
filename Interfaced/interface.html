@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SuperMarine Mesh Generator</title>
+    <link type="text/css" rel="stylesheet" href="assets/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/interface.js"></script>
+</head>
+<body>
+<div id="banner">SuperMarine<br/></div>
+<div id="main">
+<form>
+    <h2>Meshing (SuperMarine + blockMesh)</h2>
+    <h3>Divisions par Éléments</h3>
+    <p>Le nombre de division par "bloc" selon chaque axes.</p>
+    <table>
+        <tr><td><label>r :</label></td><td><input type="number" value="10"/></td></tr>
+        <tr><td><label>theta :</label></td><td><input type="number" value="10"/></td></tr>
+        <tr><td><label>z :</label></td><td><input type="number" value="10"/></td></tr>
+    </table>
+    <h3>Secteurs Par Cadran</h3>
+    <p> Le nombre de secteur par cadran.
+        Ce paramètre est reliés a l'épaisseur des blocs et multiplie le nombre de bloc angulairement.
+        Le coeurs sera composé du carrée du nombre de secteurs.
+    </p>
+    <label>Secteurs: </label><label id="sectionNum"></label> <input id="sectionSlider" style="width: 90%" name="section" type="range" step="4" min="4" max="48" value="4"/><br>
+    <h3>Taille du coeur : </h3>
+    <p> Pour éviter la création d'angle optue, le centre est découper en rectangle.
+        Ce paramètre détermine la proportion du centre occupé par ce rectangle.</p>
+    <label>Portion du Secteur Central: </label><label id="coeurProp"></label> <input id="coeurSlider" type="range" style="width: 90%" value="0.62" max="0.9" min="0.3" step="0.01"/><br/>
+
+    <h3>Sections Radiale:</h3>
+    <p>
+        Chaque nouveau cadrant est un ensemble disposé en anneau autour de la géométrie composé du même nombre de bloque qu'il y as de secteur par cadran.
+    </p>
+    <div id="RadSec">
+    </div>
+    <h3>Sections Axiales:</h3>
+    <p>
+        Chaque section duplique l'ensemble des bloc généré dans l'étape précédante sur l'axe Z.
+        La "hauteur" est de chaque section est déterminé par l'option "Taille" et la rotation par l'option "Rotation".
+        Pour chaque niveau, le coeur peut être automatiquement retiré en cochant l'option "Cardan".
+    </p>
+    <div id="VertSec">
+    </div>
+
+    <h3>Découpe</h3>
+    <p>
+        Cette outils permet de retirer des blocs spécifique produit par les étapes précédante.
+        C'est un outils puissant qui permet de construire un grand nombre de structure simple.
+        Pour plus de contrôle il est recommander d'utiliser l'outils spécialiser de découpe "snappyHexMesh".
+        <br/><span style="color:red;">*Les coordonnés invalide sont détecter par ce formulaire, elles seront affichés en rouge.</span>
+    </p>
+    <div id="CutsSec">
+    </div>
+    <br/>
+    <input id="sendButton" type="button" value="Generer en blockMeshDict"/>
+    <input id="sendButton" type="button" value="Generer en script python"/>
+    <h1>Généré un cas "interFoam"</h1>
+    <p>
+        Les options suivante permet de générer un squelette de base pour un cas "interFoam" qui utilise le maillage fait
+        à l'étape précédante.
+        Les dictionaires peuvent aussi être téléchargé indépendament à chaque étape.
+        Même si le cas est "prêt" à être exécuter, il est recommandé d'effectuer des ajustement d'abord.
+        Pour préparer le cas il suffit d'exécuter le script "", il sera alors prêt à être exécuté.
+    </p>
+    <h2>Constantes</h2>
+    <h3>Fluide 1</h3>
+    <label>Model:</label>
+    <select>
+        <option value="Newton">Newton</option>
+        <option value="PowerLaw">Loi de puissance</option>
+        <option value="Herschel-Bulkley">Herschel-Bulkley</option>
+    </select>
+    <h3>Fluide 2</h3>
+    <label>Model:</label>
+    <select>
+        <option value="Newton">Newton</option>
+        <option value="PowerLaw">Loi de puissance</option>
+        <option value="Herschel-Bulkley">Herschel-Bulkley</option>
+    </select>
+    <h3>Gravité</h3>
+    <table>
+        <tr><td><label>x :</label></td><td><input type="number" value="0"/></td></tr>
+        <tr><td><label>y :</label></td><td><input type="number" value="0"/></td></tr>
+        <tr><td><label>z :</label></td><td><input type="number" value="9.81" step="0.01"/></td></tr>
+    </table>
+    <br/>
+    <input id="sendButton" type="button" value="Télécharger le fichier Constante (sans le maillage)"/>
+    <h2>Champs</h2>
+    <h3>Remplire un rectangle (setField)</h3>
+    <table>
+        <tr><td><label>x1 :</label></td><td><input type="number" value="0"/></td><td><label>x2 :</label></td><td><input type="number" value="0.1"/></td></tr>
+        <tr><td><label>y1 :</label></td><td><input type="number" value="0"/></td><td><label>y2 :</label></td><td><input type="number" value="0.1"/></td></tr>
+        <tr><td><label>z1 :</label></td><td><input type="number" value="0" step="0.01"/></td><td><label>z2 :</label></td><td><input type="number" value="0.1" step="0.01"/></td></tr>
+    </table>
+    <br/>
+    <input id="sendButton" type="button" value="Generer en setFieldDict"/>
+    <h2>Paralèllisation (simple)</h2>
+    <h3>Nombre coeur par Axes</h3>
+    <table>
+        <tr><td><label>x :</label></td><td><input type="number" value="1" step="1"/></td></tr>
+        <tr><td><label>y :</label></td><td><input type="number" value="1" step="1"/></td></tr>
+        <tr><td><label>z :</label></td><td><input type="number" value="1" step="1"/></td></tr>
+    </table>
+    <h2>Options</h2>
+    <h3>Timestep</h3>
+    <label>Écrire toute les: </label><input type="number" value="0" step="0.01"/><br/>
+    <label>DeltaT: </label><input type="number" value="0" step="0.01"/><br/>
+    <label>Ajuster automatiquement le DeltaT selon le nombre de courrant?</label><input type='checkbox'/>
+    <br/>
+    <br/>
+    <br/>
+
+    <input id="sendButton" class="bigButton" type="button" value="Télécharger le cas"/>
+</form>
+</div>
+<div id="tail">Développé par Gabriel St-Pierre-Lemieux<br/></div>
+</body>
+</html>
