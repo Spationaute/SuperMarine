@@ -3,6 +3,8 @@
 Toolkit for the SuperMarine Interface
 (c) Gabriel St-Pierre-Lemieux
 """
+import json as js
+import superMarine as sm
 
 TPM_STR = "\ttransportModel {};\n"
 NU_STR  = "\tnu             [0 2 -1 0 0 0 0]  {};\n"
@@ -72,6 +74,10 @@ if __name__ == "__main__":
     opt["shaft"] = "[0, 0, 0, 0]"
     opt["rquad"] = "[0.1,0.2,0.3]"
     opt["impellercut"] = "[0]"
-
     print("-- SuperMarine Generation Test --")
     print(genSupM(opt))
+
+    print("-- blockMesh Generation Test --")
+    jsfile = open("./cone15deg.json","r")
+    conf = js.load(jsfile)
+    print(sm.superMarine(conf))

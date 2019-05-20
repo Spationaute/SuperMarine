@@ -76,9 +76,7 @@ def superMarine(conf):
     HLAY = conf["HLAY"]
     SHAFT = conf["SHAFT"]
     LVLROT = conf["LVLROT"]
-    IMPELLERCUT = np.zeros((NSEC, len(RQUAD), len(HLAY)))
-    IMPELLERCUT[::(NSEC // 3), [0, 1], 2] = 1
-    IMPELLERCUT[0:NSEC, 0, 2] = 1
+    IMPELLERCUT =  np.zeros((NSEC, len(RQUAD), len(HLAY)))
     SQRRATIO = conf["SQRRATIO"]
 
     # ----- READ THE DOCUMENTATIONS BEFORE CHANGING THE CODE -------- #
@@ -434,12 +432,10 @@ def superMarine(conf):
 
     blockMesh += [");"]
 
-    # Print Out
-    bmDict = open('./constant/polyMesh/blockMeshDict', 'w')
-    for line in blockMesh:
-        bmDict.write(line + '\n')
+    return "\n".join(blockMesh)
 
 if __name__ == "__main__":
     jsfile = open("./cone15deg.json","r")
     conf = js.load(jsfile)
-    superMarine(conf)
+    print("-- Super Marine Test--")
+    print(superMarine(conf))

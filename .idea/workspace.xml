@@ -4,17 +4,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="430c90ef-a5c9-4880-9edd-63dad6de5a84" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Interfaced/Toolkit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaced/assets/template/supm-header" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaced/assets/template/supm-tail" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaced/assets/template/transportProperties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SuperMarine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SuperMarine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="430c90ef-a5c9-4880-9edd-63dad6de5a84" name="Default" comment="Frontend Finished&#10;Starting Backend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaced/assets/interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaced/assets/interface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaced/interface.html" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaced/interface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaced/superMarineGui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaced/superMarineGui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaced/Toolkit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaced/Toolkit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaced/cone15deg.json" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaced/cone15deg.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaced/superMarine-0.35b.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaced/superMarine.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,23 +21,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interfaced/Toolkit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+            <state relative-caret-position="-379">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Interfaced/superMarineGui.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Interfaced/superMarine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-300">
+              <caret line="68" column="7" lean-forward="true" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -96,7 +87,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/cone15deg.json" />
         <option value="$PROJECT_DIR$/superMarine-0.35b.py" />
-        <option value="$PROJECT_DIR$/Interfaced/cone15deg.json" />
         <option value="$PROJECT_DIR$/Interfaced/interface.js" />
         <option value="$PROJECT_DIR$/Interfaced/style.css" />
         <option value="$PROJECT_DIR$/Interfaced/assets/style.css" />
@@ -104,13 +94,16 @@
         <option value="$PROJECT_DIR$/Interfaced/assets/interface.js" />
         <option value="$PROJECT_DIR$/Interfaced/assets/template/transportProperties" />
         <option value="$PROJECT_DIR$/Interfaced/assets/template/supm-tail" />
-        <option value="$PROJECT_DIR$/Interfaced/Toolkit.py" />
         <option value="$PROJECT_DIR$/Interfaced/assets/template/supm-header" />
         <option value="$PROJECT_DIR$/Interfaced/superMarineGui.py" />
+        <option value="$PROJECT_DIR$/Interfaced/cone15deg.json" />
+        <option value="$PROJECT_DIR$/Interfaced/superMarine-0.35b.py" />
+        <option value="$PROJECT_DIR$/Interfaced/Toolkit.py" />
+        <option value="$PROJECT_DIR$/Interfaced/superMarine.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="43" />
     <option name="y" value="25" />
     <option name="width" value="1069" />
@@ -233,16 +226,13 @@
       <module name="SuperMarine" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Interfaced" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Interfaced/superMarine-0.35b.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Interfaced/superMarine.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -295,20 +285,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="superMarine-0.3b" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="superMarineGui" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SuperMarine" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Interfaced" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/superMarine-0.3b.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Interfaced/superMarineGui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -318,19 +305,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.superMarine-0.3b" />
       <item itemvalue="Python.superMarine-0.3b (1)" />
       <item itemvalue="Python.superMarine-0.35b" />
       <item itemvalue="Python.superMarine-0.35b (1)" />
       <item itemvalue="Python.Toolkit" />
+      <item itemvalue="Python.superMarineGui" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Toolkit" />
+        <item itemvalue="Python.superMarineGui" />
         <item itemvalue="Python.superMarine-0.35b (1)" />
         <item itemvalue="Python.superMarine-0.35b" />
         <item itemvalue="Python.superMarine-0.3b (1)" />
-        <item itemvalue="Python.superMarine-0.3b" />
       </list>
     </recent_temporary>
   </component>
@@ -349,6 +336,7 @@
       <workItem from="1557940685631" duration="1179000" />
       <workItem from="1557948249353" duration="1732000" />
       <workItem from="1558025261696" duration="671000" />
+      <workItem from="1558385752121" duration="1702000" />
     </task>
     <task id="LOCAL-00001" summary="Standardisation and typos">
       <created>1519853659857</created>
@@ -413,11 +401,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519921245509</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Frontend Finished&#10;Starting Backend">
+      <created>1558380034069</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558380034069</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32813000" />
+    <option name="totallyTimeSpent" value="34808000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,9 +424,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="25" width="1069" height="1055" extended-state="4" />
+    <frame x="43" y="25" width="1877" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1986368" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11226158" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" />
@@ -446,7 +442,7 @@
       <window_info anchor="bottom" id="TODO" order="9" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32478634" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32975295" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32799146" />
       <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="14" visible="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Python Console" order="15" weight="0.3265306" />
@@ -468,7 +464,8 @@
     <MESSAGE value="Adding instructions" />
     <MESSAGE value="Correcting the &quot;Impeller Patch&quot; bug... The problem was an miss indented part of the code." />
     <MESSAGE value="Added doc pdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added doc pdf" />
+    <MESSAGE value="Frontend Finished&#10;Starting Backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frontend Finished&#10;Starting Backend" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/superMarine-0.3b.py" />
@@ -481,13 +478,6 @@
     </entry>
     <entry file="file://$USER_HOME$/Programmation/Python/forces/forceReader.py" />
     <entry file="file://$USER_HOME$/Programmation/Python/kLAnalyst/liveAlpha.py" />
-    <entry file="file://$PROJECT_DIR$/Interfaced/cone15deg.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Interfaced/interface.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1290">
@@ -513,23 +503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1058">
           <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/superMarine-0.35b.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="162" column="34" lean-forward="true" selection-start-line="162" selection-start-column="34" selection-end-line="162" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaced/superMarine-0.35b.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="e#2114#2132#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -583,13 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaced/Toolkit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Interfaced/superMarineGui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -597,6 +563,34 @@
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/superMarine-0.35b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1594">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaced/cone15deg.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaced/superMarine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="68" column="7" lean-forward="true" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaced/Toolkit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-379">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
