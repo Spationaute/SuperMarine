@@ -2,6 +2,30 @@ let sectionList = [];
 let verticalList = [];
 let cutsList = [];
 
+function printNewton(id){
+    let toRender = "<table>";
+    toRender += "<tr><td><label>Mu</label></td><td><input name='mu' type='text' value='0.00089'/></td></tr>";
+    toRender += "</table>";
+    $(id).html(toRender);
+}
+
+function printPowerLaw(id){
+    let toRender = "<table>";
+    toRender += "<tr><td><label>K</label></td><td><input name='mu' value='0.00089' type='number'/></td></tr>";
+    toRender += "<tr><td><label>n</label></td><td><input name='n' value='1' type='number'/></td></tr>";
+    toRender += "</table>";
+    $(id).html(toRender);
+}
+
+function printHB(id) {
+    let toRender = "<table>";
+    toRender += "<tr><td><label>Gamma Dot </label></td><td><input name='gdot' value='1e-7' type='number'></td></tr>";
+    toRender += "<tr><td><label>K</label></td><td><input name='mu' value='0.00089' type='number'></td></tr>";
+    toRender += "<tr><td><label>n</label></td><td><input name='n' value='1' type='number'></td></tr>";
+    toRender += "</table>";
+    $(id).html(toRender);
+}
+
 function updateSection(id){
     sectionList[id]= $("#Cadran" + id.toString() + "Size").val();
 }
@@ -124,21 +148,47 @@ function sendMeshPY() {
 function main(){
     $("#sectionNum").html("4");
     $("#coeurProp").html("0.62");
+
     renderRadiale("#RadSec");
     renderAxiale("#VertSec");
     renderCuts("#CutsSec");
-
+    printNewton('#fluidOne');
+    printNewton('#fluidTwo');
 
     $("#sendButton").click(()=>{
         console.log("Clicked");
     });
+
     $("#sectionSlider").change(()=>{
         let N=$("#sectionSlider").val();
         $('#sectionNum').html(N.toString());
     });
+
     $("#coeurSlider").change(()=>{
         let N=$("#coeurSlider").val();
         $('#coeurProp').html(N.toString());
+    });
+
+    $("#selectF1").change(()=>{
+        let model = $("#selectF1").val();
+        if(model === "Newton"){
+            printNewton("#fluidOne");
+        }else if(model === "PowerLaw"){
+            printPowerLaw("#fluidOne");
+        }else if(model === "HB"){
+            printHB('#fluidOne');
+        }
+    });
+
+    $("#selectF2").change(()=>{
+        let model = $("#selectF2").val();
+        if(model === "Newton"){
+            printNewton("#fluidTwo");
+        }else if(model === "PowerLaw"){
+            printPowerLaw("#fluidTwo");
+        }else if(model === "HB"){
+            printHB('#fluidTwo');
+        }
     });
 }
 
