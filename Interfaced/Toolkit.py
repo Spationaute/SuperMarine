@@ -18,7 +18,6 @@ def stringNewtonian(rho,nu):
     toPrint += "}\n"
     return toPrint
 
-
 def applyOption(option, template):
     templateFile = open(template,'r')
     lines = templateFile.readlines()
