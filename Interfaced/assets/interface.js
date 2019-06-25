@@ -136,16 +136,50 @@ function renderAxiale(div){
        renderAxiale("#VertSec");
     });
 }
+function buildBMData() {
+    let data = {
+        "sections":sectionList,
+        "vertical":verticalList,
+        "cuts":cutsList
+    };
+    return data;
+}
+
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
 
 function sendMeshBM() {
-    $.Ajax.send({
-        "message":"Bonjour",
-        dataType:"json"
+    let toSend = buildBMData();
+    toSend["type"]="blockMesh";
+    $.ajax("/gen",{
+        data:toSend,
+        dataType:"text",
+        success:function (inData,status,jq) {
+            download("blockMeshDict",inData);
+        }
     });
 }
 
 function sendMeshPY() {
-
+    let toSend = buildBMData();
+    toSend["type"]="python";
+    $.ajax("/gen",{
+        data:toSend,
+        dataType:"text",
+        success:function (inData,status,jq) {
+            download("SuperMarine.py",inData);
+        }
+    });
 }
 
 function main(){
@@ -159,8 +193,11 @@ function main(){
     printNewton('#fluidTwo');
 
     $("#sendButtonBM").click(()=>{
-        console.log("Clicked");
         sendMeshBM();
+    });
+
+    $("#sendButtonPY").click(()=>{
+        sendMeshPY();
     });
 
     $("#sectionSlider").change(()=>{

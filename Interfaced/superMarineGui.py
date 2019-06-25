@@ -1,5 +1,7 @@
 import tornado.ioloop
 import tornado.web
+import Toolkit as tk
+import superMarine as sm
 
 formTemplate = ""
 
@@ -22,12 +24,23 @@ class Generator(tornado.web.RequestHandler):
 
     def get(self):
         arguments = self.get_arguments("")
-        self.write_error("{}".format(arguments))
+        opt = dict()
+        opt["r"] = 10
+        opt["theta"] = 10
+        opt["z"] = 10
+        opt["nsec"] = 4
+        opt["sqratio"] = 0.62
+        opt["lvlrot"] = "[0, 0, 0, 0]"
+        opt["hlay"] = "[1, 1, 1, 1]"
+        opt["shaft"] = "[0, 0, 0, 0]"
+        opt["rquad"] = "[0.1,0.2,0.3]"
+        opt["impellercut"] = "[0]"
+        self.write(tk.genSupM(opt))
 
 def application():
     app = [
         (r"/", Form),
-        (r"/gen/",Generator),
+        (r"/gen",Generator),
         (r"/static/(.*)", tornado.web.StaticFileHandler,{"path":"assets"})
     ]
     return tornado.web.Application(app)
