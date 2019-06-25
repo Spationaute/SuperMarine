@@ -35,7 +35,6 @@ def application():
 if __name__=="__main__":
     formFile = open("interface.html","r")
     formTemplate  = formFile.read()
-
     app = application()
     app.listen(8888)
     tornado.ioloop.IOLoop.current().start()

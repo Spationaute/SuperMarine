@@ -138,7 +138,10 @@ function renderAxiale(div){
 }
 
 function sendMeshBM() {
-
+    $.Ajax.send({
+        "message":"Bonjour",
+        dataType:"json"
+    });
 }
 
 function sendMeshPY() {
@@ -155,8 +158,9 @@ function main(){
     printNewton('#fluidOne');
     printNewton('#fluidTwo');
 
-    $("#sendButton").click(()=>{
+    $("#sendButtonBM").click(()=>{
         console.log("Clicked");
+        sendMeshBM();
     });
 
     $("#sectionSlider").change(()=>{
