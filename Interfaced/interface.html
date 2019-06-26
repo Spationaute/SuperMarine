@@ -15,9 +15,9 @@
     <h3>Divisions par Éléments</h3>
     <p>Le nombre de division par "bloc" selon chaque axes.</p>
     <table>
-        <tr><td><label>r :</label></td><td><input type="number" value="10"/></td></tr>
-        <tr><td><label>theta :</label></td><td><input type="number" value="10"/></td></tr>
-        <tr><td><label>z :</label></td><td><input type="number" value="10"/></td></tr>
+        <tr><td><label>r :</label></td><td>     <input id="divR" type="number" value="10"/></td></tr>
+        <tr><td><label>theta :</label></td><td> <input id="divTheta" type="number" value="10"/></td></tr>
+        <tr><td><label>z :</label></td><td>     <input id="divZ" type="number" value="10"/></td></tr>
     </table>
     <h3>Secteurs Par Cadran</h3>
     <p> Le nombre de secteur par cadran.
@@ -86,33 +86,33 @@
     </div>
     <h3>Gravité</h3>
     <table>
-        <tr><td><label>x :</label></td><td><input type="number" value="0"/></td></tr>
-        <tr><td><label>y :</label></td><td><input type="number" value="0"/></td></tr>
-        <tr><td><label>z :</label></td><td><input type="number" value="9.81" step="0.01"/></td></tr>
+        <tr><td><label>x :</label></td><td><input id="GravX" type="number" value="0"/></td></tr>
+        <tr><td><label>y :</label></td><td><input id="GravY" type="number" value="0"/></td></tr>
+        <tr><td><label>z :</label></td><td><input id="GravZ" type="number" value="9.81" step="0.01"/></td></tr>
     </table>
     <br/>
     <input id="sendButton" type="button" value="Télécharger le fichier Constante (sans le maillage)"/>
     <h2>Champs</h2>
     <h3>Remplire un rectangle (setField)</h3>
     <table>
-        <tr><td><label>x1 :</label></td><td><input type="number" value="0"/></td><td><label>x2 :</label></td><td><input type="number" value="0.1"/></td></tr>
-        <tr><td><label>y1 :</label></td><td><input type="number" value="0"/></td><td><label>y2 :</label></td><td><input type="number" value="0.1"/></td></tr>
-        <tr><td><label>z1 :</label></td><td><input type="number" value="0" step="0.01"/></td><td><label>z2 :</label></td><td><input type="number" value="0.1" step="0.01"/></td></tr>
+        <tr><td><label>x1 :</label></td><td><input id="SetFieldX" type="number" value="0"/></td><td><label>x2 :</label></td><td><input id="SetFieldX2" type="number" value="0.1"/></td></tr>
+        <tr><td><label>y1 :</label></td><td><input id="SetFieldY" type="number" value="0"/></td><td><label>y2 :</label></td><td><input id="SetFieldY2" type="number" value="0.1"/></td></tr>
+        <tr><td><label>z1 :</label></td><td><input id="SetFieldZ" type="number" value="0" step="0.01"/></td><td><label>z2 :</label></td><td><input id="SetFieldZ2" type="number" value="0.1" step="0.01"/></td></tr>
     </table>
     <br/>
     <input id="sendButton" type="button" value="Generer en setFieldDict"/>
     <h2>Paralèllisation (simple)</h2>
     <h3>Nombre coeur par Axes</h3>
     <table>
-        <tr><td><label>x :</label></td><td><input type="number" value="1" step="1"/></td></tr>
-        <tr><td><label>y :</label></td><td><input type="number" value="1" step="1"/></td></tr>
-        <tr><td><label>z :</label></td><td><input type="number" value="1" step="1"/></td></tr>
+        <tr><td><label>x :</label></td><td><input id="ParCX" type="number" value="1" step="1"/></td></tr>
+        <tr><td><label>y :</label></td><td><input id="ParCY" type="number" value="1" step="1"/></td></tr>
+        <tr><td><label>z :</label></td><td><input id="ParCZ" type="number" value="1" step="1"/></td></tr>
     </table>
     <h2>Options</h2>
     <h3>Timestep</h3>
-    <label>Écrire toute les: </label><input type="number" value="0" step="0.01"/><br/>
-    <label>DeltaT: </label><input type="number" value="0" step="0.01"/><br/>
-    <label>Ajuster automatiquement le DeltaT selon le nombre de courrant?</label><input type='checkbox'/>
+    <label>Écrire toute les: </label><input id="DeltaEcrit" type="number" value="0" step="0.01"/><br/>
+    <label>DeltaT: </label><input id="DeltaT" type="number" value="0" step="0.01"/><br/>
+    <label>Ajuster automatiquement le DeltaT selon le nombre de courrant?</label><input id="autoDT" type='checkbox'/>
     <br/>
     <br/>
     <br/>

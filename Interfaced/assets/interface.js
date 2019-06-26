@@ -113,9 +113,9 @@ function renderAxiale(div){
     toRender += "<tr><td><b>Niveau</b></td><td><b>Taille</b></td><td><b>Cardan</b></td><td><b>Rotation</b></td><td></td></tr>";
     toRender += "<tr>";
         toRender += "<td>Fond</td>";
-        toRender += "<td><input type=\"number\"/></td>";
-        toRender += "<td><input type='checkbox'/></td>";
-        toRender += "<td><input type='number'/></td>";
+        toRender += "<td><input id='botN' value='0.01' type=\"number\"/></td>";
+        toRender += "<td><input id='botImp' type='checkbox'/></td>";
+        toRender += "<td><input id='botRot' value='0.00' type='number'/></td>";
         toRender += "<td></td>";
     toRender += "</tr>";
     let nlist = list.length;
@@ -132,15 +132,19 @@ function renderAxiale(div){
     $(div).html(toRender);
 
     $('#vertAdd').click(()=>{
-       verticalList.push([0.01,"off",0]);
+       verticalList.push([0.02,"off",0]);
        renderAxiale("#VertSec");
     });
 }
 function buildBMData() {
     let data = {
+        "centre":$("#radCentre").val(),
         "sections":sectionList,
+        "bottom":[$("#botN").val(), $("#botImp").val(), $("#botRot").val()],
         "vertical":verticalList,
-        "cuts":cutsList
+        "cuts":cutsList,
+        "nsec":$("#sectionSlider").val(),
+        "division":[$("#divR").val(), $("#divTheta").val(), $("#divZ").val()]
     };
     return data;
 }
@@ -162,10 +166,18 @@ function sendMeshBM() {
     let toSend = buildBMData();
     toSend["type"]="blockMesh";
     $.ajax("/gen",{
-        data:toSend,
+        data:JSON.stringify(toSend),
+        contentType:"application/json",
+        method:"POST",
         dataType:"text",
         success:function (inData,status,jq) {
-            download("blockMeshDict",inData);
+            console.log("Receiving....");
+            let data = JSON.parse(inData);
+            if(data["status"]==="ready") {
+                download("blockMeshDict", data["data"]);
+            }else{
+                console.log("Querry Error 1001");
+            }
         }
     });
 }
@@ -174,10 +186,18 @@ function sendMeshPY() {
     let toSend = buildBMData();
     toSend["type"]="python";
     $.ajax("/gen",{
-        data:toSend,
+        data:JSON.stringify(toSend),
+        contentType:"application/json",
+        method:"POST",
         dataType:"text",
         success:function (inData,status,jq) {
-            download("SuperMarine.py",inData);
+            console.log("Receiving....");
+            let data = JSON.parse(inData);
+            if(data["status"]==="ready") {
+                download("blockMeshDict", data["data"]);
+            }else{
+                console.log("Querry Error 1001");
+            }
         }
     });
 }
