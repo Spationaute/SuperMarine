@@ -37,7 +37,7 @@ def genSupM(opt):
     document += "\nDIVI = [{r}, {theta}, {z}]\n".format(**opt)
     document += "NSEC = {nsec}\n".format(**opt)
     document += "SQRATIO = {sqratio}\n".format(**opt)
-    document += "RQUAD = {sqratio}\n".format(**opt)
+    document += "RQUAD = {rquad}\n".format(**opt)
     document += "SHAFT = {shaft}\n".format(**opt)
     document += "LVLROT = {lvlrot}\n".format(**opt)
     document += "HLAY = {hlay}\n".format(**opt)
