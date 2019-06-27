@@ -31,15 +31,15 @@ function updateSection(id){
 }
 function updateNiveau(id) {
     verticalList[id] = [];
-    verticalList[id].push($("#Level" + id.toString() + "Size").val());
+    verticalList[id].push(parseFloat($("#Level" + id.toString() + "Size").val()));
     verticalList[id].push($("#Level" + id.toString() + "Cardan").val());
-    verticalList[id].push($("#Level" + id.toString() + "Rotation").val());
+    verticalList[id].push(parseFloat($("#Level" + id.toString() + "Rotation").val()));
 }
 function updateCuts(id) {
     cutsList[id] = [];
-    cutsList[id].push($("#Cuts" + id.toString() + "X").val());
-    cutsList[id].push($("#Cuts" + id.toString() + "Y").val());
-    cutsList[id].push($("#Cuts" + id.toString() + "Z").val());
+    cutsList[id].push(parseInt($("#Cuts" + id.toString() + "X").val()));
+    cutsList[id].push(parseInt($("#Cuts" + id.toString() + "Y").val()));
+    cutsList[id].push(parseInt($("#Cuts" + id.toString() + "Z").val()));
 }
 function removeSection(id){
     sectionList.splice(id,1);
@@ -112,7 +112,7 @@ function renderAxiale(div){
     let toRender ="<table>";
     toRender += "<tr><td><b>Niveau</b></td><td><b>Taille</b></td><td><b>Cardan</b></td><td><b>Rotation</b></td><td></td></tr>";
     toRender += "<tr>";
-        toRender += "<td>Fond</td>";
+        toRender += "<td>Niveau 0</td>";
         toRender += "<td><input id='botN' value='0.01' type=\"number\"/></td>";
         toRender += "<td><input id='botImp' type='checkbox'/></td>";
         toRender += "<td><input id='botRot' value='0.00' type='number'/></td>";
@@ -121,7 +121,7 @@ function renderAxiale(div){
     let nlist = list.length;
     for(let ii=0;ii<nlist;++ii){
         toRender += "<tr>";
-            toRender += "<td>Niveau "+ii.toString()+"</td>";
+            toRender += "<td>Niveau "+(ii+1).toString()+"</td>";
             toRender += "<td><input  id='Level"+ii.toString()+"Size' value='"+list[ii][0].toString()+"' type=\"number\" oninput='updateNiveau("+ii.toString()+")'/></td>";
             toRender += "<td><input  id='Level"+ii.toString()+"Cardan' value='"+list[ii][1].toString()+"' type='checkbox' oninput='updateNiveau("+ii.toString()+")'/></td>";
             toRender += "<td><input  id='Level"+ii.toString()+"Rotation' value='"+list[ii][2].toString()+"' type='number' oninput='updateNiveau("+ii.toString()+")'/></td>";
@@ -138,13 +138,20 @@ function renderAxiale(div){
 }
 function buildBMData() {
     let data = {
-        "centre":$("#radCentre").val(),
+        "centre":parseFloat($("#radCentre").val()),
         "sections":sectionList,
-        "bottom":[$("#botN").val(), $("#botImp").val(), $("#botRot").val()],
+        "bottom":[
+            parseInt($("#botN").val()),
+            parseInt($("#botImp").val()),
+            parseInt($("#botRot").val())],
         "vertical":verticalList,
         "cuts":cutsList,
-        "nsec":$("#sectionSlider").val(),
-        "division":[$("#divR").val(), $("#divTheta").val(), $("#divZ").val()]
+        "nsec":parseInt($("#sectionSlider").val()),
+        "coeur":parseFloat($("#coeurSlider").val()),
+        "division":[
+            parseInt($("#divR").val()),
+            parseInt($("#divTheta").val()),
+            parseInt($("#divZ").val())]
     };
     return data;
 }
@@ -194,7 +201,7 @@ function sendMeshPY() {
             console.log("Receiving....");
             let data = JSON.parse(inData);
             if(data["status"]==="ready") {
-                download("blockMeshDict", data["data"]);
+                download("superMarine.py", data["data"]);
             }else{
                 console.log("Querry Error 1001");
             }

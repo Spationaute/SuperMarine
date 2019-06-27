@@ -26,33 +26,77 @@ class Generator(tornado.web.RequestHandler):
     def prepare(self):
         self.args = {"status":"empty"}
         if self.request.body:
-            self.args = json.loads(self.request.body)
+            self.args = json.loads(self.request.body.decode("UTF-8"))
             self.args["status"] = "ready"
 
     def post(self):
-        print("Request in: \n{}".format(self.args))
+        print("Request in: \n")
+        prettyJSON(self.args)
         if self.args["status"] == "empty":
             self.write(self.args)
         elif self.args["type"] == "blockMesh":
             opt = dict()
-            opt["r"] = 10
-            opt["theta"] = 10
-            opt["z"] = 10
-            opt["nsec"] = 4
-            opt["sqratio"] = 0.62
-            opt["lvlrot"] = "[0, 0, 0, 0]"
-            opt["hlay"] = "[1, 1, 1, 1]"
-            opt["shaft"] = "[0, 0, 0, 0]"
-            opt["rquad"] = "[0.1,0.2,0.3]"
-            opt["impellercut"] = "[0]"
-            self.args["data"] = tk.genSupM(opt)
-            print("Answer:\n{}".format(self.args))
+            opt["DIVI"] = [self.args["division"][0],
+                           self.args["division"][1],
+                           self.args["division"][2]]
+            opt["NSEC"] = self.args["nsec"]
+            opt["SQRRATIO"] = self.args["coeur"]
+            opt["RQUAD"] = [self.args["centre"]]+self.args["sections"]
+            opt["IMPELLERCUT"] = self.args["cuts"]
+
+            bottom = self.args["bottom"]
+            lvlrot = [bottom[0]]
+            shaft = [1 if bottom[1] == "on" else 0]
+            hlay = [bottom[2]]
+            for level in self.args["vertical"]:
+                lvlrot.append(level[0])
+                shaft.append(1 if level[1] == "on" else 0)
+                hlay.append(level[2])
+
+            opt["LVLROT"] = lvlrot
+            opt["HLAY"] = hlay
+            opt["SHAFT"] = shaft
+
+            self.args["data"] = sm.superMarine(opt)
+            print("Answer:\n")
+            prettyJSON(self.args)
             self.write(self.args)
         elif self.args["type"] == "python":
-            self.args["data"] = "None"
-            print("Answer:\n{}".format(self.args))
+            opt = dict()
+            opt["r"] = self.args["division"][0]
+            opt["theta"] = self.args["division"][1]
+            opt["z"] = self.args["division"][2]
+            opt["nsec"] = self.args["nsec"]
+            opt["sqratio"] = self.args["coeur"]
+            opt["rquad"] = [self.args["centre"]]+self.args["sections"]
+            opt["impellercut"] = self.args["cuts"]
+
+            bottom = self.args["bottom"]
+            lvlrot = [bottom[0]]
+            shaft = [1 if bottom[1] == "on" else 0]
+            hlay = [bottom[2]]
+            for level in self.args["vertical"]:
+                lvlrot.append(level[0])
+                shaft.append(1 if level[1] == "on" else 0)
+                hlay.append(level[2])
+
+            opt["lvlrot"] = lvlrot
+            opt["hlay"] = hlay
+            opt["shaft"] = shaft
+
+            self.args["data"] = tk.genSupM(opt)
+            print("Answer:\n")
+            prettyJSON(self.args)
             self.write(self.args)
 
+
+def prettyJSON(toFormat):
+    for key,item in toFormat.items():
+        toprint = "{}".format(item)
+        toprint = toprint.replace("\n", "\\n")
+        if len(toprint) > 23:
+            toprint = toprint[:23]+"..."
+        print("{:12}: {:24}".format(key, toprint))
 
 def application():
     app = [
