@@ -31,15 +31,15 @@ function updateSection(id){
 }
 function updateNiveau(id) {
     verticalList[id] = [];
-    verticalList[id].push($("#Level" + id.toString() + "Size").val());
+    verticalList[id].push(parseFloat($("#Level" + id.toString() + "Size").val()));
     verticalList[id].push($("#Level" + id.toString() + "Cardan").val());
-    verticalList[id].push($("#Level" + id.toString() + "Rotation").val());
+    verticalList[id].push(parseFloat($("#Level" + id.toString() + "Rotation").val()));
 }
 function updateCuts(id) {
     cutsList[id] = [];
-    cutsList[id].push($("#Cuts" + id.toString() + "X").val());
-    cutsList[id].push($("#Cuts" + id.toString() + "Y").val());
-    cutsList[id].push($("#Cuts" + id.toString() + "Z").val());
+    cutsList[id].push(parseInt($("#Cuts" + id.toString() + "X").val()));
+    cutsList[id].push(parseInt($("#Cuts" + id.toString() + "Y").val()));
+    cutsList[id].push(parseInt($("#Cuts" + id.toString() + "Z").val()));
 }
 function removeSection(id){
     sectionList.splice(id,1);
@@ -112,16 +112,16 @@ function renderAxiale(div){
     let toRender ="<table>";
     toRender += "<tr><td><b>Niveau</b></td><td><b>Taille</b></td><td><b>Cardan</b></td><td><b>Rotation</b></td><td></td></tr>";
     toRender += "<tr>";
-        toRender += "<td>Fond</td>";
-        toRender += "<td><input type=\"number\"/></td>";
-        toRender += "<td><input type='checkbox'/></td>";
-        toRender += "<td><input type='number'/></td>";
+        toRender += "<td>Niveau 0</td>";
+        toRender += "<td><input id='botN' value='0.01' type=\"number\"/></td>";
+        toRender += "<td><input id='botImp' type='checkbox'/></td>";
+        toRender += "<td><input id='botRot' value='0.00' type='number'/></td>";
         toRender += "<td></td>";
     toRender += "</tr>";
     let nlist = list.length;
     for(let ii=0;ii<nlist;++ii){
         toRender += "<tr>";
-            toRender += "<td>Niveau "+ii.toString()+"</td>";
+            toRender += "<td>Niveau "+(ii+1).toString()+"</td>";
             toRender += "<td><input  id='Level"+ii.toString()+"Size' value='"+list[ii][0].toString()+"' type=\"number\" oninput='updateNiveau("+ii.toString()+")'/></td>";
             toRender += "<td><input  id='Level"+ii.toString()+"Cardan' value='"+list[ii][1].toString()+"' type='checkbox' oninput='updateNiveau("+ii.toString()+")'/></td>";
             toRender += "<td><input  id='Level"+ii.toString()+"Rotation' value='"+list[ii][2].toString()+"' type='number' oninput='updateNiveau("+ii.toString()+")'/></td>";
@@ -132,15 +132,26 @@ function renderAxiale(div){
     $(div).html(toRender);
 
     $('#vertAdd').click(()=>{
-       verticalList.push([0.01,"off",0]);
+       verticalList.push([0.02,"off",0]);
        renderAxiale("#VertSec");
     });
 }
 function buildBMData() {
     let data = {
+        "centre":parseFloat($("#radCentre").val()),
         "sections":sectionList,
+        "bottom":[
+            parseInt($("#botN").val()),
+            parseInt($("#botImp").val()),
+            parseInt($("#botRot").val())],
         "vertical":verticalList,
-        "cuts":cutsList
+        "cuts":cutsList,
+        "nsec":parseInt($("#sectionSlider").val()),
+        "coeur":parseFloat($("#coeurSlider").val()),
+        "division":[
+            parseInt($("#divR").val()),
+            parseInt($("#divTheta").val()),
+            parseInt($("#divZ").val())]
     };
     return data;
 }
@@ -162,10 +173,18 @@ function sendMeshBM() {
     let toSend = buildBMData();
     toSend["type"]="blockMesh";
     $.ajax("/gen",{
-        data:toSend,
+        data:JSON.stringify(toSend),
+        contentType:"application/json",
+        method:"POST",
         dataType:"text",
         success:function (inData,status,jq) {
-            download("blockMeshDict",inData);
+            console.log("Receiving....");
+            let data = JSON.parse(inData);
+            if(data["status"]==="ready") {
+                download("blockMeshDict", data["data"]);
+            }else{
+                console.log("Querry Error 1001");
+            }
         }
     });
 }
@@ -174,10 +193,18 @@ function sendMeshPY() {
     let toSend = buildBMData();
     toSend["type"]="python";
     $.ajax("/gen",{
-        data:toSend,
+        data:JSON.stringify(toSend),
+        contentType:"application/json",
+        method:"POST",
         dataType:"text",
         success:function (inData,status,jq) {
-            download("SuperMarine.py",inData);
+            console.log("Receiving....");
+            let data = JSON.parse(inData);
+            if(data["status"]==="ready") {
+                download("superMarine.py", data["data"]);
+            }else{
+                console.log("Querry Error 1001");
+            }
         }
     });
 }
