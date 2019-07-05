@@ -16,12 +16,19 @@ Since it is a python script, the user can change the code has he wish and adapt 
 	1. `$ python3 setup.py`
 	1. `$ mpirun -n4 interFoam -parallel`
 	1. **The number of processor can be changed in the decomposePar dictionary**
+	
+## To Start the web Interface (**NEW**)
+1. Go to the "Interfaced" repertory.
+1. Execute "SuperMarineGui.py". 
+1. Connect to "localhost:9000" on your favorite web browser.
 
 ## TO DO
 - [ ] Clean the code
 - [ ] Finish the manual
+- [x] Add a simple interface
+- [ ] Add an interface autostart at the root
 - [x] Add an example
-- [ ] Add more examples
+- [x] Add more examples
 
 ## Documentations
 
