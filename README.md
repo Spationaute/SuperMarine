@@ -47,7 +47,7 @@ The "`./constant/polyMesh`" directory must exist.
 | **SQRRATIO** | The RATIO for the distance between the center SQuaRe region and the Outer cylinder. Must be larger than 0 and smaller than 1. |
 
 ## Special Tanks
-Denis Groleau
-Pierre Proulx
-Ehsan Askari
+- Denis Groleau
+- Pierre Proulx
+- Ehsan Askari
 
