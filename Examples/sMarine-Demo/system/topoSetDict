@@ -25,8 +25,8 @@ actions
 	    source  cylinderToCell;
 	    sourceInfo
 	    {
-	       p1       (0 0 0.06); // start point on cylinder axis
-	       p2       (0 0 0.08);   // end point on cylinder axis
+	       p1       (0 0 0.056); // start point on cylinder axis
+	       p2       (0 0 0.094);   // end point on cylinder axis
 	       radius   0.04;
 	    }
 
