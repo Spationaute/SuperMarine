@@ -10,6 +10,12 @@ The present version of the code is sufficient to create accurately a basic stirr
 but can be tweaked in order to have more sophisticated shapes.
 Since it is a python script, the user can change the code has he wish and adapt it to his case.
 
+## Requirement
+This python script is made to be pretty simple and has only few requirements. 
+1. You need at least Python 3.6
+1. You also need at least numpy version 1.12.0. Numpy is a numerical library which is used to perform operation on matrices in the code.
+
+
 ## To Execute the spMarine-demo
 1. Load the openFoam toolkit in your environment.
 1. Switch to the directory and enter:
